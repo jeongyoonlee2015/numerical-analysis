@@ -9,7 +9,7 @@ def gaussElimin(A, b):
     n = len(b)
     # 상삼각행렬 만들기
     for j in range(0, n - 1):
-        #피벗이 0인지 체크 - 여기 고치
+        #피벗이 0인지 체크
         if np.abs(A[j, j] - 0.0) < sys.float_info.epsilon:
             for k in range(j + 1, n):
                 if np.abs(A[k, j] - 0.0) > sys.float_info.epsilon:
