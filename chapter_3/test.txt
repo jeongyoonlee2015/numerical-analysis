@@ -1,0 +1,17 @@
+This is a lecture for Numerical Analysis.
+Test1
+Test2
+Test3
+EOD
+----origin----
+첫번째시도입니다.
+두 번째 줄 추가입니다.
+
+첫번째시도입니다.
+두 번째 줄 추가입니다.
+
+첫번째시도입니다.
+두 번째 줄 추가입니다.
+
+첫번째시도입니다.
+두 번째 줄 추가입니다.
