@@ -1,6 +1,6 @@
 # 입력: SPD 행렬 A, 초기벡터 X, 허용오차 tol, 최대 반복횟수 kmax
 # 출력: 근사해 approx
-# <Jacobi Method>
+# GS 방법은 야코비 방법에서 최근 x로만 바꾸어 주면 된다.
 import numpy as np
 
 def jacobi(A, b, x, kmax, tol):
@@ -15,7 +15,7 @@ def jacobi(A, b, x, kmax, tol):
     print('k \t\t 근사해')
     while((rnorm > (tol * bnorm)) and (k <= kmax)):
         for i in range(0, n):
-            Lsum = np.dot(A[i, 0:i], x[0:i])
+            Lsum = np.dot(A[i, 0:i], xnew[0:i])
             # Lsum = np.matmul(A[i, 0:i], x[0:i]) dot 대신 matmul을 쓸 수 있다.
             Usum = np.dot(A[i, i + 1:n], x[i + 1:n])
             xnew[i] = (b[i] - Lsum - Usum) / A[i, i]
