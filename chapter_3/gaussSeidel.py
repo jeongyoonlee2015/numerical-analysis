@@ -1,9 +1,9 @@
 # 입력: SPD 행렬 A, 초기벡터 X, 허용오차 tol, 최대 반복횟수 kmax
 # 출력: 근사해 approx
-# <Gauss Seidel> GS 방법은 야코비 방법에서 최근 x로만 바꾸어 주면 된다.
+# <Gauss Seidel> GS 방법은 야코비 방법에서 최근 x로만 바꾸어 주면 된다.## jacobi보다 좀 더 빠르다.
 import numpy as np
 
-def jacobi(A, b, x, kmax, tol):
+def gaussSeidel(A, b, x, kmax, tol):
     r = b - np.matmul(A, b)#잔여오차 r
     rnorm = np.linalg.norm(r)
     bnorm = np.linalg.norm(b)
@@ -33,5 +33,5 @@ b = np.array([6.0, 12.0, 24.0])
 x = np.array([0.0, 0.0, 0.0])
 kmax = 10 #반복횟수 더 줘도 상관없음
 tol = 0.0001 #허용오차
-approx = jacobi(A, b, x, kmax, tol)
+approx = gaussSeidel(A, b, x, kmax, tol)
 print(approx)
