@@ -1,6 +1,6 @@
 # 입력: SPD 행렬 A, 초기벡터 X, 허용오차 tol, 최대 반복횟수 kmax
 # 출력: 근사해 approx
-# GS 방법은 야코비 방법에서 최근 x로만 바꾸어 주면 된다.
+# <Gauss Seidel> GS 방법은 야코비 방법에서 최근 x로만 바꾸어 주면 된다.
 import numpy as np
 
 def jacobi(A, b, x, kmax, tol):
