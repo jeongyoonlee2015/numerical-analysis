@@ -20,3 +20,5 @@ print("<<<tensor multiplication - dot>>>")
 print(x)
 print("<<<tensor multiplication - matmul>>>")
 print(y)
+
+format
