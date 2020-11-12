@@ -11,10 +11,14 @@ def power(A, x, kmax):
     for k in range(0, kmax):
         y = np.matmul(A, x)
         #파워법 구성방법은 두 가지가 있다.
-        # 1차 방법: y값에 절대값을 취하고 그 중 가장 큰 값
-        index = np.argmax(np.abs(y)) # 절대값이 최대값인 인덱스
-        value = y[index] # value: 우세고유값
-        vector = y / value #y값을 value로 나눈다. #vector: 우세 고유 벡터
+        # # 1차 방법: y값에 절대값을 취하고 그 중 가장 큰 값
+        # index = np.argmax(np.abs(y)) # 절대값이 최대값인 인덱스
+        # value = y[index] # value: 우세고유값
+        # vector = y / value #y값을 value로 나눈다. #vector: 우세 고유 벡터
+
+        # 2차 방법 - 내적한다.
+        value = np.dot(x, y) #고유값
+        vector = y / np.linalg.norm(y) # 고유벡터
         print('k = {0} \t 고유값 = {1} \t 고유벡터 = {2}'.format(k, value, vector))#k, value, vector값이 변하는 것이 들어가게 됨.
         x  = np.copy(vector)
     return value, vector
@@ -32,6 +36,7 @@ w, V = np.linalg.eig(A)
 print(w)
 print(V)
 
+#1차방법 결과 : 결과는 동일하다.
 # k = 0 	 고유값 = 2.0 	 고유벡터 = [ 1. -1.  0.]
 # k = 1 	 고유값 = 3.0 	 고유벡터 = [ 1.         -0.66666667  1.        ]
 # k = 2 	 고유값 = 3.6666666666666665 	 고유벡터 = [ 1.         -1.          0.90909091]
